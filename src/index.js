@@ -2,10 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import * as cocoSsd from "@tensorflow-models/coco-ssd";
 import "@tensorflow/tfjs";
-import "jquery";
-import "materialize-css/dist/js/materialize.js";
-import "materialize-css/dist/css/materialize.css";
-import { logo } from './giphy.gif';
+import logo from './giphy.gif';
 import "./index.css";
 
 class App extends React.Component {
@@ -80,7 +77,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-
+              <img src={logo} className='App-logo'  alt="logo" />
               <video id="video" width="1920" height="1080" />
               <canvas id="canvas" width="1920" height="1080" />
 
