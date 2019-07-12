@@ -1,13 +1,39 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+#video {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.2;
+  background-color: #ffffff;
+}
+body,html{
+  background: #000000;
+  color:#fff;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 2s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
