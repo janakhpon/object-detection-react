@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/object-detection-react/static/css/main.08597e00.chunk.css",
+    "main.js": "/object-detection-react/static/js/main.a9f18808.chunk.js",
+    "main.js.map": "/object-detection-react/static/js/main.a9f18808.chunk.js.map",
+    "runtime~main.js": "/object-detection-react/static/js/runtime~main.329743cc.js",
+    "runtime~main.js.map": "/object-detection-react/static/js/runtime~main.329743cc.js.map",
+    "static/js/2.a8b3ccfa.chunk.js": "/object-detection-react/static/js/2.a8b3ccfa.chunk.js",
+    "static/js/2.a8b3ccfa.chunk.js.map": "/object-detection-react/static/js/2.a8b3ccfa.chunk.js.map",
+    "index.html": "/object-detection-react/index.html",
+    "precache-manifest.1c0fa5e7c6455be719ccd852af2804ed.js": "/object-detection-react/precache-manifest.1c0fa5e7c6455be719ccd852af2804ed.js",
+    "service-worker.js": "/object-detection-react/service-worker.js",
+    "static/css/main.08597e00.chunk.css.map": "/object-detection-react/static/css/main.08597e00.chunk.css.map",
+    "static/media/giphy.gif": "/object-detection-react/static/media/giphy.b7c48bfb.gif"
+  }
+}
