@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import * as cocoSsd from "@tensorflow-models/coco-ssd";
 import "@tensorflow/tfjs";
-import logo from './giphy.gif';
 import "./index.css";
 
 class App extends React.Component {
+  state = {width:window.innerWidth/1.5,height:window.innerHeigh/1.2}
   componentDidMount() {
     const video = document.getElementById("video");
     const webCamPromise = navigator.mediaDevices
@@ -13,8 +13,8 @@ class App extends React.Component {
         audio: false,
         video: {
           facingMode: "user",
-          width: 900,
-          height:500 
+          width: this.state.width,
+          height:this.state.height 
         }
       })
       .then(stream => {
@@ -46,7 +46,7 @@ class App extends React.Component {
     const ctx = c.getContext("2d");
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     // Font options.
-    const font = "16px sans-serif";
+    const font = "20px sans-serif";
     ctx.font = font;
     ctx.textBaseline = "top";
     predictions.forEach(prediction => {
@@ -77,9 +77,17 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-              <img src={logo} className='App-logo'  alt="logo" />
-              <video id="video" width="900" height="500" />
-              <canvas id="canvas" width="900" height="500" />
+              <div className="lds-roller"><div>
+                </div><div>
+                  </div><div>
+                    </div><div>
+                      </div><div>
+                        </div><div>
+                          </div><div>
+                            </div><div>
+                              </div></div>
+              <video id="video" className="higher" width={this.state.width} height="720" />
+              <canvas id="canvas" className="higher" width="1200" height="720" />
       </div>
     );
   }
