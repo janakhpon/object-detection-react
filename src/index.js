@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Particles from 'react-particles-js';
 import * as cocoSsd from "@tensorflow-models/coco-ssd";
 import "@tensorflow/tfjs";
 import "./index.css";
 
 class App extends React.Component {
-  state = {width:window.innerWidth,height:window.innerHeight}
-  
+  state = { width: window.innerWidth, height: window.innerHeight }
+
 
   componentDidMount() {
     const video = document.getElementById("video");
@@ -16,7 +17,7 @@ class App extends React.Component {
         video: {
           facingMode: "user",
           width: this.state.width,
-          height:this.state.height/2 
+          height: this.state.height / 1.1
         }
       })
       .then(stream => {
@@ -50,7 +51,7 @@ class App extends React.Component {
     const ctx = c.getContext("2d");
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     // Font options.
-    const font = "20px sans-serif";
+    const font = "25px Noto Sans";
     ctx.font = font;
     ctx.textBaseline = "top";
     predictions.forEach(prediction => {
@@ -59,11 +60,11 @@ class App extends React.Component {
       const width = prediction.bbox[2];
       const height = prediction.bbox[3];
       // Draw the bounding box.
-      ctx.strokeStyle = "#1493CC";
+      ctx.strokeStyle = "#e74c3c";
       ctx.lineWidth = 4;
       ctx.strokeRect(x, y, width, height);
       // Draw the label background.
-      ctx.fillStyle = "#1493CC";
+      ctx.fillStyle = "#e74c3c";
       const textWidth = ctx.measureText(prediction.class).width;
       const textHeight = parseInt(font, 20); // base 10
       ctx.fillRect(x, y, textWidth + 4, textHeight + 4);
@@ -73,7 +74,7 @@ class App extends React.Component {
       const x = prediction.bbox[0];
       const y = prediction.bbox[1];
       // Draw the text last to ensure it's on top.
-      ctx.fillStyle = "#000000";
+      ctx.fillStyle = "#FFFFFF";
       ctx.fillText(prediction.class, x, y);
     });
   };
@@ -81,17 +82,70 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-              <div className="lds-roller"><div>
-                </div><div>
-                  </div><div>
-                    </div><div>
-                      </div><div>
-                        </div><div>
-                          </div><div>
-                            </div><div>
-                              </div></div>
-              <video id="video" className="higher" width={this.state.width} height={this.state.height/1.1} />
-              <canvas id="canvas" className="higher" width={this.state.width} height={this.state.height/1.1} />
+        <Particles
+          params={{
+            "particles": {
+              "number": {
+                "value": 160,
+                "density": {
+                  "enable": false
+                }
+              },
+              "color": {
+                "value": ["#f1c40f","#B8E986","#50E3C2","#FFD300","#E86363","#e74c3c"]
+              },
+              "shape": {
+                "type": "circle",
+                "stroke": {
+                  "width": 0,
+                  "color": "#e74c3c"
+                }
+              },
+              "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                  "speed": 4,
+                  "size_min": 0.3
+                }
+              },
+              "line_linked": {
+                "enable": false
+              },
+              "move": {
+                "random": true,
+                "speed": 1,
+                "direction": "top",
+                "out_mode": "out"
+              }
+            },
+            "interactivity": {
+              "events": {
+                "onhover": {
+                  "enable": true,
+                  "mode": "bubble"
+                },
+                "onclick": {
+                  "enable": true,
+                  "mode": "repulse"
+                }
+              },
+              "modes": {
+                "bubble": {
+                  "distance": 250,
+                  "duration": 2,
+                  "size": 0,
+                  "opacity": 0
+                },
+                "repulse": {
+                  "distance": 400,
+                  "duration": 4
+                }
+              }
+            }
+          }} />
+        <video id="video" className="higher" width={this.state.width} height={this.state.height / 1.1} />
+        <canvas id="canvas" className="higher" width={this.state.width} height={this.state.height / 1.1} />
       </div>
     );
   }
