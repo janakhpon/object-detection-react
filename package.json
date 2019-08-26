@@ -4,18 +4,22 @@
   "homepage": "http://gitname.github.io/object-detection-react",
   "private": true,
   "dependencies": {
-    "@tensorflow-models/coco-ssd": "^1.1.1",
-    "@tensorflow/tfjs": "^1.2.2",
+    "@tensorflow-models/coco-ssd": "^2.0.0",
+    "@tensorflow/tfjs": "^1.2.8",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-magic-dropzone": "^1.0.1",
+    "react-particles-js": "^2.7.0",
     "react-scripts": "3.0.1"
+  },
+  "resolutions": {
+    "ajv": "6.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -b master -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -35,6 +39,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.0.1"
+    "gh-pages": "^2.1.1"
   }
 }
