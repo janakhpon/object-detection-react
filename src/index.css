@@ -18,10 +18,10 @@ body,html{
 }
 
 .higher{
+  margin-top: 2.5rem;
   z-index: 1000;
-  border-radius: 0.5rem;
-  border: #cef 1px solid;
-  margin: 0.2rem;
+  border-radius: 2rem;
+
 }
 
 

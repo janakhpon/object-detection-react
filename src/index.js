@@ -5,7 +5,9 @@ import "@tensorflow/tfjs";
 import "./index.css";
 
 class App extends React.Component {
-  state = {width:window.innerWidth/1.5,height:window.innerHeigh/1.2}
+  state = {width:window.innerWidth,height:window.innerHeight}
+  
+
   componentDidMount() {
     const video = document.getElementById("video");
     const webCamPromise = navigator.mediaDevices
@@ -14,7 +16,7 @@ class App extends React.Component {
         video: {
           facingMode: "user",
           width: this.state.width,
-          height:this.state.height 
+          height:this.state.height/2 
         }
       })
       .then(stream => {
@@ -30,6 +32,8 @@ class App extends React.Component {
     Promise.all([modelPromise, webCamPromise]).then(values => {
       this.detectFrame(video, values[0]);
     });
+    console.log(this.state.width)
+    console.log(this.state.height)
   }
 
   detectFrame = (video, model) => {
@@ -55,11 +59,11 @@ class App extends React.Component {
       const width = prediction.bbox[2];
       const height = prediction.bbox[3];
       // Draw the bounding box.
-      ctx.strokeStyle = "#00FFFF";
+      ctx.strokeStyle = "#1493CC";
       ctx.lineWidth = 4;
       ctx.strokeRect(x, y, width, height);
       // Draw the label background.
-      ctx.fillStyle = "#00FFFF";
+      ctx.fillStyle = "#1493CC";
       const textWidth = ctx.measureText(prediction.class).width;
       const textHeight = parseInt(font, 20); // base 10
       ctx.fillRect(x, y, textWidth + 4, textHeight + 4);
@@ -86,8 +90,8 @@ class App extends React.Component {
                           </div><div>
                             </div><div>
                               </div></div>
-              <video id="video" className="higher" width={this.state.width} height="720" />
-              <canvas id="canvas" className="higher" width="1200" height="720" />
+              <video id="video" className="higher" width={this.state.width} height={this.state.height/1.1} />
+              <canvas id="canvas" className="higher" width={this.state.width} height={this.state.height/1.1} />
       </div>
     );
   }
