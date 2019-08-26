@@ -19,6 +19,7 @@ Install Dependencies using [npm](https://www.npmjs.com/)
     npm i -d
     npm start
     npm run build
+    
 
 Install Dependencies using [yarn](https://yarnpkg.com/en/)
 
@@ -27,7 +28,7 @@ Install Dependencies using [yarn](https://yarnpkg.com/en/)
     yarn start
     yarn run build
 
-To Deploy to [Github](https://github.com)
+To Deploy to [Github](https://github.com), change ur website link
 
     yarn run deploy
     npm run deploy
