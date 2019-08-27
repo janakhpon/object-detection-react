@@ -17,17 +17,18 @@ Install Dependencies using [npm](https://www.npmjs.com/)
 
     npm install
     npm i -d
-    npm run start
+    npm start
     npm run build
+    
 
 Install Dependencies using [yarn](https://yarnpkg.com/en/)
 
     yarn install
     yarn add
-    yarn run start
+    yarn start
     yarn run build
 
-To Deploy to [Github](https://github.com)
+To Deploy to [Github](https://github.com), change ur website link
 
     yarn run deploy
     npm run deploy
@@ -36,19 +37,4 @@ To Deploy to [Github](https://github.com)
 
 
 # Warning
-If u run into error use the following steps
-
-```bash
-sudo yarn install
-sudo yarn add
-sudo yarn run client-install
-sudo yarn run dev
-```
-or
-
-```bash
-sudo npm install
-sudo npm i -d
-sudo npm run client-install
-sudo npm run dev
-```
+If u run into error use the following steps, you may wanna use `sudo` for permission!
