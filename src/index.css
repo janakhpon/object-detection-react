@@ -1,3 +1,17 @@
+body,html{
+  background: #000000;
+  color:#fff;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.higher{
+  margin-top: 2rem;
+  z-index: 1000;
+
+}
+
+
 #canvas {
   position: fixed;
   top: 0;
@@ -10,31 +24,14 @@
   left: 0;
 }
 
-.loading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  opacity: 0.2;
-  background-color: #ffffff;
-}
-body,html{
-  background: #000000;
-  color:#fff;
-  text-align: center;
-}
 
-.App-logo {
-  animation: App-logo-spin infinite 2s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 480px) {
+  /* Selectors and styles affecting screens UP TO 480px (Phone) */
+  .higher{
+    margin:0px;
+    padding: 0px;
+    z-index: 1000;
+  
   }
 
-  to {
-    transform: rotate(360deg);
-  }
 }
