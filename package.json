@@ -6,12 +6,13 @@
   "dependencies": {
     "@tensorflow-models/coco-ssd": "^2.0.0",
     "@tensorflow/tfjs": "^1.2.8",
+    "ajv": "6.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-magic-dropzone": "^1.0.1",
     "react-media": "^1.9.2",
     "react-particles-js": "^2.7.0",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.4.0"
   },
   "resolutions": {
     "ajv": "6.8.1"
